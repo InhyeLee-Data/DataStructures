@@ -90,9 +90,9 @@ To do that,
 
 (4) A couple of addresses includes sub info after the street address (for example. - Conference Room, - basement), get rid of them
 ```javascript
-  let dash = myAddy.includes("-");
+  let dash = myAddy.includes("- ");
   if (dash === true) {
-    let dashIndex = myAddy.indexOf('-');
+    let dashIndex = myAddy.indexOf('- ');
     myAddy = myAddy.substring(0, dashIndex);
   }
 ```
