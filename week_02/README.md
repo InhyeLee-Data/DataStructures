@@ -88,7 +88,16 @@ To do that,
   let myAddy = str.substring(0, firstComma); // We retrieve the necessary substring (Street Address) using the index above
 ```
 
-(4) Push each item into an array 
+(4) A couple of addresses includes sub info after the street address (for example. - Conference Room, - basement), get rid of them
+```javascript
+  let dash = myAddy.includes("-");
+  if (dash === true) {
+    let dashIndex = myAddy.indexOf('-');
+    myAddy = myAddy.substring(0, dashIndex);
+  }
+```
+
+(5) Push each item into an array 
 
 ```javascript
     myTexts.push(myAddy);
