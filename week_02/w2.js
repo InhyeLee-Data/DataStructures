@@ -36,6 +36,12 @@ $("table table table").find("tbody tr").find('td:nth-child(1)').each(function(i,
   let firstComma = str.indexOf(',');
   let myAddy = str.substring(0, firstComma);
   
+  //(5) A couple of addresses includes sub info after the street address (for example. - Conference Room, - basement), get rid of them
+  let dash = myAddy.includes("-");
+  if (dash === true) {
+    let dashIndex = myAddy.indexOf('-');
+    myAddy = myAddy.substring(0, dashIndex);
+  }
   // (5) Push the collected address into Array
   myTexts.push(myAddy);
 });
