@@ -13,7 +13,7 @@ https://parsons.nyc/aa/m08.html
 https://parsons.nyc/aa/m09.html  
 https://parsons.nyc/aa/m10.html  
 ```
-The purpose of such request (aka web-scraping) is so that we can re-create them into better pages with easier to use user interaces later. (clickable map, search function and etc). 
+The purpose of such request (aka web-scraping) is so that we can re-create them into better pages with easier to use user interface later. (clickable map, search function and etc). 
 
 ### 0. Require: request, fs
 To make http calls, request is required. 
