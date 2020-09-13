@@ -10,28 +10,32 @@ Cheerio is used to make a quick selection for DOM element
 ### 1. Make the Selection of the DOM element we need
 There are multiple tables in this page, with nesting.
 This inner most table contains individual event info. We are looking for a table inside a table inside a table. 
-Inside this table, the first td cell of each tr contains the event address.
+Inside the tbody of the innermost table, the first td cell of each tr contains the event address.
 
-In a nut shell,
+In a nut shell, this is what we are looking at.
 
 ```html
 <table>
     <table>
         <table>
-            <tr>
-                <td>
-                    "event address is appearing here"
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
+	   <thead>...</thead>
+	   <tbody>
+		    <tr>
+			<td>
+			    "Event address is appearing here"
+			</td>
+			<td>...</td>
+			<td>...</td>
+		    </tr>
+		    ...
+           </tbody>
         </table>
     </table>
 </table>
 
 ```
 
-To get there, we make the following selection.
+To get to the event address, we make the following selection.
 
 ```javascript
 $("table table table").find("tbody tr").find('td:nth-child(1)').each(function(i, elem) {
@@ -72,7 +76,6 @@ To do that,
 (2) Then we can get rid of what appears after the address. So, we remove span and image elements.
 
 ```javascript
-  $(elem).find('div').remove().html();
   $(elem).find('span').remove().html();
   $(elem).find('image').remove().html();
 ```
