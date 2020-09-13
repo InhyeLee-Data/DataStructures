@@ -2,15 +2,14 @@
 The goal this week is to parse this page: http://parsons.nyc/aa/m03.html, which is saved in my local path from week1 and retrieve the street address of each event in a file in a local drive.
 
 
-### 0. Require: request, fs, cheerio
-To make http calls, request is required. 
-fs (filesystem) is required to save files in the local directory. (in our case, aws cloud)
+### 0. Require: fs, cheerio
+Filesystem (fs) is required to save files in the local directory. (in our case, aws cloud)
 Cheerio is used to make a quick selection for DOM element 
 
 
 ### 1. Make the Selection of the DOM element we need
 There are multiple tables in this page, with nesting.
-We are looking for a table inside a table inside a table. This inner most table contains individual event info.
+This inner most table contains individual event info. We are looking for a table inside a table inside a table. 
 Inside this table, the first td cell of each tr contains the event address.
 
 In a nut shell,
@@ -41,7 +40,7 @@ $("table table table").find("tbody tr").find('td:nth-child(1)').each(function(i,
 ```
 
 ### 2. Data Cleaning
-The first td cell selected above contain multiple lines. And the address appear in the middle of a chunk of html text.
+The first td cell selected above contains multiple lines. The address appears in the middle of a chunk of html text.
 The following is the very first instance of such case, where we can decide what we need to remove in order to just get the street address.
 
 ```html
@@ -78,7 +77,7 @@ To do that,
   $(elem).find('image').remove().html();
 ```
 
-(3) To get our street Address, we only need the string that appears before the first comma.
+(3) To get our street address, we only need the string that appears before the first comma.
 
 ```javascript
   let str = $(elem).html();  // This is our entire venue info string
@@ -96,7 +95,7 @@ To do that,
 After the above step, we get out of the loop inside the cheerio selection we made. 
 
 Then, we work on additional step to get rid of \t (tab) and \n (new line) that seem to be included in each address.
-![extra stuff](https://github.com/InhyeLee-Data/ds-2020/blob/master/week_02/data/tab_newline.png)
+![extra stuff](data/tab_newline.png)
 
 We use string.trim() inside array.map() method to remove these extra stuff.
 
@@ -104,7 +103,7 @@ We use string.trim() inside array.map() method to remove these extra stuff.
 const cleanedMyTexts= myTexts.map(item => item.trim());
 ```
 
-###4. Save the file
+### 4. Save the file
 Finally, the street addresses are saved into a local drive.
 
 ```javascript
