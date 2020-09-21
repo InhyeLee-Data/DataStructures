@@ -76,7 +76,7 @@ async.eachSeries(addresses, function(value, callback) {
         let venue = {};
         venue.address = query.streetAddress + ', ' + query.city + ', ' + query.state; // Address with comma
         // venue.address = tamuGeo['InputAddress']['StreetAddress']; 
-        venue.latLong = {}; // Inner Object to cantain Latitude & Longitude
+        venue.latLong = {}; // Inner Object to contain Latitude & Longitude
         venue.latLong.lat = tamuGeo['OutputGeocodes'][0]['OutputGeocode']['Latitude'] // Latitude
         venue.latLong.long = tamuGeo['OutputGeocodes'][0]['OutputGeocode']['Longitude'] // Longitude
 
