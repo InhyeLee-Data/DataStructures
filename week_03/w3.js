@@ -11,7 +11,7 @@ const cheerio = require('cheerio');
 // TAMU api key
 // API Documentation: https://geoservices.tamu.edu/Services/Geocode/WebService/
 dotenv.config();
-//const API_KEY = process.env.TAMU_KEY; // TAMU_KEY -> My entry in .evn file didnt get recognized for some reason, so it's hard coded
+//const API_KEY = process.env.TAMU_KEY; // TAMU_KEY -> My entry in .env file didnt get recognized for some reason, so it's hard coded
 const API_KEY = "";
 const API_URL = 'https://geoservices.tamu.edu/Services/Geocode/WebService/GeocoderWebServiceHttpNonParsed_V04_01.aspx'
 
