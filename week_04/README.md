@@ -1,5 +1,5 @@
 # Week4
-For this week, I created PostgreSQL DB Instance in AWS (Relational Database) and populated the database from the cloud9 environment.
+For this week, I created PostgreSQL DB Instance in AWS (Relational Database) and populated the database from the cloud9 environment with the information from a json file.
 
 
 ### 1. One fix for dotenv
@@ -20,9 +20,9 @@ I used one script to read and parse the json file from my local drive.
 let addressesForDb= JSON.parse(fs.readFileSync('../week_03/data/first.json')); // Read JSON FILE that contains addresses
 ```
 
-(1) fs.readFileSync reads the file from the local drive. (file system)
-(2) JSON.parse() parses the Json 
-(3) Then the result is saved as an array of objects, addressesForDb.
+- (1) fs.readFileSync() reads the file from the local drive. (file system)
+- (2) JSON.parse()parses a JSON string, constructing the JavaScript object described by the string 
+- (3) The result is saved as an array of objects, addressesForDb.
 
 
 Otherwise, I almost exactly shadowed the given instruction as follows. 
