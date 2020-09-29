@@ -28,8 +28,8 @@ let addressesForDb= JSON.parse(fs.readFileSync('../week_03/data/first.json')); /
 ### 3. My result checking 
 This is the image of the console after I populated the database with the json file.
 It is directly querying the entire contents of a table. 
-![Result checking](https://github.com/InhyeLee-Data/DataStructures/blob/master/week_04/w4_result_checking.png)
 
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_04/w4_result_checking.png" width="400">
 
 Otherwise, I almost exactly shadowed the given instruction as follows. 
 
