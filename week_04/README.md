@@ -10,7 +10,7 @@ To correct this issue, I used the following script.
 const dotenv = require("dotenv").config({ path: __dirname + `/../.env` }); 
 ```
 
-"__dirname" recognizes the current directory and `/../.env` adds the relational path of the .env file to the current directory.
+`__dirname` recognizes the absolute path of the current directory and `/../.env` adds the relational path of the .env file to the current directory.
 
 
 ### 2. Reading and Parsing a json file in the local drive
