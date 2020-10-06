@@ -39,13 +39,12 @@ AWS.config.region = "us-east-1"; // ap-northeast-2: Seoul
 let dynamodb = new AWS.DynamoDB();
 
 let params = {};
+params.TableName = "processblog_2020"; // Dynamo DB Name
 
 // Async Each Series 
 async.eachSeries(blogEntries, function insertToDynamoDB(item, callback) {
  //
  params.Item = item;  // Object.  In a noSQL database, Item is equivalent to Row in SQL db.
- params.TableName = "processblog_2020"; // Dynamo DB Name
- 
  // insert 
  dynamodb.putItem(params, function (err, data) {
   if (err) console.log(err, err.stack); // an error occurred
@@ -55,4 +54,3 @@ async.eachSeries(blogEntries, function insertToDynamoDB(item, callback) {
  // Repeat in 1 sec
   setTimeout(callback, 1000); 
 })
-
