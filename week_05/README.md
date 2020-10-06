@@ -1,5 +1,5 @@
 # Week5
-For this week, I created a DynamoDB and I am currently in the process of connecting this to EC2 account under AWS.
+For this week, I created a DynamoDB (NoSQL DB) and connected it to an EC2 account under AWS.
 
-I am following the following tutorial otherwise. 
+I am following the following tutorial. 
 https://github.com/samizdatco/ds-2020/blob/master/weekly_assignment_05.md 
