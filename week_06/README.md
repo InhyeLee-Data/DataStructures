@@ -1,8 +1,9 @@
 # Week6
-(interim report) I've run into some issues on both projects. 
-1. For the aa meeting project, I need to re-parse the necessary information. 
 
-### Personal Diary Project
+### 1. AA Meeting Project 
+1. For the aa meeting project, I need to re-parse the necessary information. A new table has been created. 
+
+### 2. Personal Diary Project
 For the personal diary project, the main learning was that I needed to set up a partition key (topic, as a string) and also a sort key (dt, as a number) in order to create a composite primary key. Following is the primary key set up I created. 
 
 ![dynamo keys set up](dynamoDB_setUp.png)
