@@ -1,7 +1,23 @@
 # Week6
 
 ### 1. AA Meeting Project 
-1. For the aa meeting project, I need to re-parse the necessary information. A new table has been created. 
+
+A new table "aadata" has been created in PostgreSQL
+
+```javascript
+// Sample SQL statement to create a table (using ` quotes to break into multiple lines):
+let query = `CREATE TABLE aadata (
+    mtgday varchar(25), 
+    mtgtime  varchar(25), 
+    mtghour int, 
+    mtglocation varchar(75), 
+    mtgaddress varchar(75), 
+    mtgregion varchar(75), 
+    mtgtypes varchar(150)
+);`;
+```
+
+For the aa meeting project, I need to re-parse the necessary information from the source html. 
 
 ### 2. Personal Diary Project
 For the personal diary project, the main learning was that I needed to set up a partition key (topic, as a string) and also a sort key (dt, as a number) in order to create a composite primary key. Following is the primary key set up I created. 
