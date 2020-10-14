@@ -4,6 +4,7 @@
 
 A new table "aadata" has been created in PostgreSQL
 
+
 ```javascript
 // Sample SQL statement to create a table (using ` quotes to break into multiple lines):
 let query = `CREATE TABLE aadata (
@@ -15,6 +16,13 @@ let query = `CREATE TABLE aadata (
     mtgregion varchar(75), 
     mtgtypes varchar(150)
 );`;
+```
+
+It will be queried via SELECT "necessary columns" FROM statment "table" WHERE "condition meets". 
+
+```javascript
+// Sample SQL statement to query meetings on Monday that start on or after 7:00pm: 
+var thisQuery = "SELECT mtgday, mtgtime, mtglocation, mtgaddress, mtgtypes FROM aadata WHERE mtgday = 'Monday' and mtghour >= 7;";
 ```
 
 For the aa meeting project, I need to re-parse the necessary information from the source html. 
