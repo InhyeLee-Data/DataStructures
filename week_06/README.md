@@ -18,7 +18,7 @@ let query = `CREATE TABLE aadata (
 );`;
 ```
 
-It will be queried via SELECT "necessary columns" FROM statment "table" WHERE "condition meets". 
+It will be queried via SELECT "necessary columns" FROM "a table" WHERE "some conditions are met". 
 
 ```javascript
 // Sample SQL statement to query meetings on Monday that start on or after 7:00pm: 
