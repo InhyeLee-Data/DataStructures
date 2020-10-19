@@ -15,8 +15,9 @@ The task is executed step-by-step as follows.
 3. Create a table with required fields in postgresSQL DB.
 
 #### w7-aa-4
-4. (1) Combine the two json files and create new object arrays.
-4. (2) Insert data into the RDS table.
+4. 
+(1) Combine the two json files and create new object arrays.
+(2) Insert data into the RDS table.
 
 #### w7-aa-5
 5. Test Querying information. 
