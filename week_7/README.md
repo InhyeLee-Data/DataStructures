@@ -9,8 +9,8 @@ The task is executed step-by-step as follows.
 => I shall revisit this section later
 
 #### w7-aa-2
-2. (1) Request Geocode information from TAMU geoservices using "address" information from the saved json. The Geocode is saved into a separate json file.
-2. (2) Combine the two json files and create new object arrays.
+2 (1) Request Geocode information from TAMU geoservices using "address" information from the saved json. The Geocode is saved into a separate json file.
+2 (2) Combine the two json files and create new object arrays.
 
 #### w7-aa-3
 3. Create a table with required fields in postgresSQL DB.
