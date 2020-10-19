@@ -6,6 +6,7 @@ The work is executed step-by-step as follows.
 
 #### w7-aa-1 
 1. Parse and Save meetingsInfo from each event into a json.
+=> I shall revisit this section later
 
 #### w7-aa-2
 2. (1) Request Geocode information from TAMU geoservices using "address" information from the saved json. The Geocode is saved into a separate json file.
@@ -19,3 +20,8 @@ The work is executed step-by-step as follows.
 
 #### w7-aa-5
 5. Test Querying information. 
+![Query Result](queryResult_from_postgreSQL.png)
+
+#### Finding
+I noticed that my amazon aws was sometimes acting weird, and would execute a file from its previous version of the same name js file and give me an error. 
+![AWS Error](queryResult_from_postgreSQL.png)
