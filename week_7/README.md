@@ -2,7 +2,7 @@
 
 The goal for this week is to finish parsing necessary information from all 10 aa event pages, then insert them into postgresSQL.
 
-The work is executed step-by-step as follows. 
+The task is executed step-by-step as follows. 
 
 #### w7-aa-1 
 1. Parse and Save meetingsInfo from each event into a json.
