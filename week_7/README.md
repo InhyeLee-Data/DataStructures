@@ -23,7 +23,8 @@ The work is executed step-by-step as follows.
 ![Query Result](queryResult_from_postgreSQL.png)
 
 #### Finding
-I noticed that my amazon aws was sometimes acting weird, and would execute a file from its previous version of the same name js file and give me an error. On one occasion, I was not requesting postgresSQL in code, it gave me an error saying that it cannot get connected to postgresSQL because of a password issue with my account. 
-For example, my console.log("problems") result does not show up, when running the js file, shown in the picture attached. It is showing the result of console.log("test") from another version of this file.
+I noticed that my amazon aws was sometimes acting weird, and would execute a file from its previous version of the same name js file and give me an error. On one occasion, I was not requesting postgresSQL in code, yet it gave me an error saying that it could not get connected to postgresSQL because of a password issue with my account. 
+<br>
+Following is another example. Shown in the picture attached,  my console.log("problems") result does not show up, when running the js file,  It is showing the result of console.log("test") which I had included in another file.
 ![AWS Error](unstabilityNoticed_on_AWS.png)
-This problem was resolved later on, but it created a point of mystery with regards to the stability of Amazon AWS cloud9 service.
+This problem was resolved later on, but I could not figure out where the source of this problem was. It created a point of doubt with regards to the stability of Amazon AWS cloud9 service.
