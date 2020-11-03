@@ -1,7 +1,7 @@
 ### 2020 IEEE VIS Conference Summary
 
 #### My personal take: 
-Data videos seem to attract viewers’ attention very effectively and often convey the underlying messages well, sometimes better than interactive data visualization with text to read. Data visualization videos made by Vox can be one successful example of such. I thought this paper might be revealing animation transition techniques of data videos, which contribute to the successful delivery of information with a hint of storytelling.
+Data videos seem to attract viewers’ attention very effectively and often convey the underlying messages well, often times in a more compelling fashion than interactive data visualization with user interface or text to read. Data visualization videos made by Vox can be one successful example of such. I was interested in the followig paper, anticipating that it might reveal specific animation transition techniques of data videos, which contribute to the successful delivery of information with a hint of storytelling.
 
 #### Summary of the presentation I selected
 <b>Title</b>: Narrative Transitions in Data Videos <br>
