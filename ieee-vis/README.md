@@ -3,7 +3,7 @@ This write up is a summary of a paper presented at 2020 IEEE Vis conference.
 Please note that the summary text is an abbreviated version of the author's presentation and paper; images are screencaptured from the presentation. 
 
 #### My personal take on the chosen subject: 
-Data videos seem to attract viewers’ attention very effectively and convey messages well, often times in a more compelling fashion than interactive data visualization with user interface or text to read. Data visualization videos made by Vox can be one successful example of such. I was interested in the followig paper, anticipating that it might reveal specific animation transition techniques of data videos, which contribute to the successful delivery of information with a hint of storytelling.
+Data videos seem to attract viewers’ attention very effectively and convey messages well, often times in a more compelling fashion than an interactive data visualization with user interface or text to read. Data visualization videos made by Vox can be one successful example of such. I was interested in the followig paper, anticipating that it might reveal specific animation transition techniques of data videos, which contribute to the successful delivery of information within a format of storytelling.
 
 #### Summary of the presentation I selected
 <b>Title</b>: Narrative Transitions in Data Videos <br>
@@ -42,4 +42,4 @@ Their future work agenda is as follows.
 
 
 #### My question 
-My remaining question is then how we can combine these transition techniques in interactive data visualization’s narrative? Are data videos with animation and strong storylines somewhat a different field from interactive data visualization?  
+My remaining question is then how we can combine these transition techniques in the narrative of an interactive data visualization? Are data videos with animation and strong storylines somewhat a different field from an interactive data visualization?  
