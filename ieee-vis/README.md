@@ -1,7 +1,9 @@
 ### 2020 IEEE VIS Conference Summary
+This write up is a summary of a paper presented at 2020 IEEE Vis conference. 
+Please note that the summary text is an abbreviated version of the author's presentation and paper; images are screencaptured from the presentation. 
 
-#### My personal take: 
-Data videos seem to attract viewers’ attention very effectively and often convey the underlying messages well, often times in a more compelling fashion than interactive data visualization with user interface or text to read. Data visualization videos made by Vox can be one successful example of such. I was interested in the followig paper, anticipating that it might reveal specific animation transition techniques of data videos, which contribute to the successful delivery of information with a hint of storytelling.
+#### My personal take on the chosen subject: 
+Data videos seem to attract viewers’ attention very effectively and convey messages well, often times in a more compelling fashion than interactive data visualization with user interface or text to read. Data visualization videos made by Vox can be one successful example of such. I was interested in the followig paper, anticipating that it might reveal specific animation transition techniques of data videos, which contribute to the successful delivery of information with a hint of storytelling.
 
 #### Summary of the presentation I selected
 <b>Title</b>: Narrative Transitions in Data Videos <br>
@@ -14,22 +16,19 @@ Data videos seem to attract viewers’ attention very effectively and often conv
 <b>Project Website</b>: https://narrativetransitions.github.io/home/<br>
 
 #### What are narrative transitions? 
-
-
-
-
+![narrativeTransitions](1_narrativeTransitions.png)
 
 #### Narrative Transition Example
-
+![Narrative Transition Example](2_narrativeTransitionExample.png)
 In the video, possibly an ad of a prep school education program called “Matrix Education Tutoring College”, a boy that was studying at a desk kicks a soccer ball. The ball becomes a starting point of a chart that is getting animated and grows along with the line height. Here, a transition is made between non-visualization content to a visualization content. In the video (captured) on the bottom, the camera zooms into the circle at the end of the line. The circle is transformed into a pie chart that shows the percentage of high scores that the institution is trying to emphasize.
 
 Authors argue that transitions as above can keep viewers oriented when states change in data videos. They also argue however, that the visualization community does not provide a comprehensive analysis on how transitions are designed and their designs for transitions are relatively one dimensional. On the other hand, video designers mainly focus on motion graphics not on visualizations, while they pay great attention to the well-made transition designs. Can we solve this problem and improve narrative transitions in data videos? This question is the focus of this paper and the authors analyzed 284 data videos and 3909 video clips to conduct a content analysis. 
 
 #### Content Analysis of the videos and Taxonomy 
-
+![Content Analysis](3_contentAnalysis.png)
 
 #### Taxonomy of Narrative Transitions
-
+![Taxonomy](4_taxonomy.png)
 
 The specifics of transition methods are as follows.
 Refresh - In this type of transitions, no connection exists between the last frame of the previous scene and the first frame of the coming scene, presenting a new topic or an abrupt turn.
@@ -39,7 +38,7 @@ Preserving Guide - Some visual items in the previous scene are kept and reused i
 Narrative Agent - In this transition, the shape, position, and color maintain the narrative information. However, the number of the contents changes to show the differences. This method is used to highlight data or to present data sequentially.
 
 Their future work agenda is as follows. 
-
+![Future](5_theirFuturePlan.png)
 
 
 #### My question 
