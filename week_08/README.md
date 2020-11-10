@@ -7,7 +7,7 @@ The goal of this week is to set up a particle board (in my case photon board) wi
 Following the wifi connection setup instruction for the microcontroller (link: https://docs.particle.io/quickstart/photon/#connect-your-photon), I had it connected to two wifi networks. (1. Local wifi at home, 2. My cell phone as a hot spot),
 
 #### 2. My device ID is noted from the Web IDE console. 
-![web IDE]()
+![web IDE](img/deviceID.png)
 
 #### 3. To test out the cloud programming environment, I downloaded a LED blinking program to the device via the Web IDE  
 ![blinking](img/BlinkingTest.gif)
@@ -29,6 +29,7 @@ Following the wifi connection setup instruction for the microcontroller (link: h
 2. I included two libraries - DHT.h and additionally Adafruit_Sensor.h as it was required.  
 3. I am using DHT11
 4. I set up two Particle variables (reference: https://docs.particle.io/reference/device-os/firmware/photon/#particle-variable-) so that the sensor values from the Photon Board can be read in the Cloud environment. In my understanding, Serial.print() values were not directly read in the console. The Particle variables in my case had to be set up as double instead of float. 
+
 5. These two sensor values can be read on Cloud in the following links:
     1. Temperature (Celcius): https://api.particle.io/v1/devices/3d001f000f47353136383631/tVal?access_token=478b7ecf00ca4e99b22914e4beae9c776b8f402c 
     2. Humidity:  https://api.particle.io/v1/devices/3d001f000f47353136383631/hVal?access_token=478b7ecf00ca4e99b22914e4beae9c776b8f402c 
