@@ -8,23 +8,27 @@ The goal of this week is to set up a particle board (in my case photon board) wi
 Following the wifi connection setup instruction for the microcontroller (link: https://docs.particle.io/quickstart/photon/#connect-your-photon), I had it connected to two wifi networks. (1. Local wifi at home, 2. My cell phone as a hot spot),
 
 #### 2. My device ID is noted from the Web IDE console. 
-<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/deviceID.png" width="500px">
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/deviceID.png" width="700px">
 
 #### 3. To test out the cloud programming environment, I downloaded a LED blinking program to the device via the Web IDE  
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/BlinkingTest.gif" width="500px">
+
 * D7 (a built in LED) blinks every 0.5 sec (Here the sensor is not used yet)
 
 #### 4. To receive a new access token, I used a Particle CLI (terminal) 
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/particle_CLI_setUp.png" width="500px">
-* How to set up a CLI: https://docs.particle.io/tutorials/developer-tools/cli/
-* After I login from CLI, I created  a new access token by using $  particle token create 
+
+-  How to set up a CLI: https://docs.particle.io/tutorials/developer-tools/cli/
+-  After I logged in from CLI, I created  a new access token by using $  particle token create 
 
 #### 5. I connected the temperature sensor to the photon board. 
 My humidity/temperature sensor (DHT11) has three pins; I don’t need to connect an additional resistor between the data output to input(D2) of the board. My setup looks like the following.
+
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/Photon_3PinDHT.jpg" width="500px">
-* Black (GND) - Ground 
-* Red (VCC) - 3V3
-* Yellow (Data) - connected to Digital Pin 2
+
+- Black (GND) - Ground 
+- Red (VCC) - 3V3
+- Yellow (Data) - connected to Digital Pin 2
 
 #### 6. Codes on the Particle Web IDE
 1. My code was modified from DHTtester.ino which is provided as an example for DHT library in the Particle's Web IDE. 
