@@ -10,10 +10,10 @@ Following the wifi connection setup instruction for the microcontroller (link: h
 #### 2. My device ID is noted from the Web IDE console. 
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/deviceID.png" width="700px">
 
-#### 3. To test out the cloud programming environment, I downloaded a LED blinking program to the device via the Web IDE  
-<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/BlinkingTest.gif" width="500px">
-
+#### 3. To test out the cloud programming environment, I downloaded an LED blinking program to the device via the Web IDE  
 * D7 (a built in LED) blinks every 0.5 sec (Here the sensor is not used yet)
+
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/BlinkingTest.gif" width="500px">
 
 #### 4. To receive a new access token, I used a Particle CLI (terminal) 
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/particle_CLI_setUp.png" width="500px">
