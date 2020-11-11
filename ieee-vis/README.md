@@ -31,11 +31,11 @@ Authors argue that transitions as above can keep viewers oriented when states ch
 ![Taxonomy](4_taxonomy.png)
 
 The specifics of transition methods are as follows.
-Refresh - In this type of transitions, no connection exists between the last frame of the previous scene and the first frame of the coming scene, presenting a new topic or an abrupt turn.
-Half Time - Half Time adds a new scene between videos.
-Camera Motion - Camera Motion (Subtypes: Pedestal, Truck, Tilt, Pan, Dolly, Zoom, and Rack Focus.
-Preserving Guide - Some visual items in the previous scene are kept and reused in the coming scenes. The layout of these visual items (orientation, size, and position) may change. These visual elements keep the integrity of the narrative information in previous scenes by preserving the same appearance, and guide viewers’ attention to a new scene by creating the layout change. This method is particularly useful in setting up a supplement, correlation, or a comparison. 
-Narrative Agent - In this transition, the shape, position, and color maintain the narrative information. However, the number of the contents changes to show the differences. This method is used to highlight data or to present data sequentially.
+- Refresh - In this type of transitions, no connection exists between the last frame of the previous scene and the first frame of the coming scene, presenting a new topic or an abrupt turn.
+- Half Time - Half Time adds a new scene between videos.
+- Camera Motion - Camera Motion (Subtypes: Pedestal, Truck, Tilt, Pan, Dolly, Zoom, and Rack Focus.
+- Preserving Guide - Some visual items in the previous scene are kept and reused in the coming scenes. The layout of these visual items (orientation, size, and position) may change. These visual elements keep the integrity of the narrative information in previous scenes by preserving the same appearance, and guide viewers’ attention to a new scene by creating the layout change. This method is particularly useful in setting up a supplement, correlation, or a comparison. 
+- Narrative Agent - In this transition, the shape, position, and color maintain the narrative information. However, the number of the contents changes to show the differences. This method is used to highlight data or to present data sequentially.
 
 Their future work agenda is as follows. 
 ![Future](5_theirFuturePlan.png)
