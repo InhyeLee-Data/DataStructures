@@ -1,4 +1,4 @@
-## Week 8 
+# Week 8 
 The goal of this week is to set up a particle board (in my case photon board) with a temperature/humidity sensor and start receiving data in the cloud. I based the setup on https://github.com/samizdatco/ds-2020/tree/master/weekly_assignment_08. Some specifics and differences are noted below as well.
 
 #### 1. Modules used: A Wifi IoT device (Photon board) & DHT11 sensor (I got a 3-PIN temperature/humidity sensor)
