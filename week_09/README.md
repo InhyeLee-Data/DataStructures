@@ -108,6 +108,7 @@ The list of tasks that my manager watches can be viewed with the following comma
 ```
 pm2 ls
 ```
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/pm2_ls.png" width="800px">
 
 I can stop a certain task by addressing its ID number (In my case I only have 1 task, and the index is 0)
 ```
@@ -165,7 +166,7 @@ client.query(thirdQuery, (err, res) => {
 });
 ```
 #### 7. Result of data entering into the table
-<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/pm2_ls.png" width="800px">
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/w9-check.png" width="500px">
 
 #### 8. Future Step
 I am planning to use another API that receives weather(temperature) information from my dream locations, to visualiza the warmth I am missing in this era of Corona virus when travelling to overseas is tough.
