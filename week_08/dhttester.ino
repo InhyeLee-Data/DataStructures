@@ -5,7 +5,6 @@
 
 // Example testing sketch for various DHT humidity/temperature sensors
 // Written by ladyada, public domain
-// modified for Particle by inhye
 
 #define DHTPIN 2     // what digital pin we're connected to
 
@@ -20,7 +19,7 @@
 // as the current DHT reading algorithm adjusts itself to work on faster procs.
 DHT dht(DHTPIN, DHTTYPE);
 
-// float tVal = 0.0; // *** => "float"gives an ERROR. double has to be used instead 
+// float tVal = 0.0;  => "float"gives an ERROR. double has to be used instead 
 double tVal = 0;
 double hVal = 0;
 
@@ -73,4 +72,8 @@ void loop() {
   // Reference: https://docs.particle.io/reference/device-os/firmware/photon/#particle-variable- 
   Particle.variable("tVal", tVal);
   Particle.variable("hVal", hVal);
+  
+ 
+ // combine the various numbers into a valid JSON string and publish it
+  Particle.publish("SensorReadings", String::format("{\"Humidity(\%)\": %4.2f, \"Temperature(°C)\": %4.2f, \"Temperature(°F)\": %4.2f,  \"Heat Index(°C)\": %4.2f}", hVal, tVal, f, hic));
 }
