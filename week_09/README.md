@@ -88,7 +88,7 @@ module.exports = {
 ```
 
 #### 4. Initial testing of the code without PM2
-<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/one%20Value.png">
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/one%20Value.png" width="800px">
 
 #### 5. Start the eco system
 ```
@@ -150,7 +150,7 @@ client.query(thirdQuery, (err, res) => {
 });
 ```
 #### 8. Result 
-<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/pm2_ls" width="800px">
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/pm2_ls.png" width="800px">
 
 #### 9. Future Step
 I am planning to use another API that receives weather(temperature) information from my dream locations, to visualiza the warmth I am missing in this era of Corona virus when travelling to overseas is tough.
