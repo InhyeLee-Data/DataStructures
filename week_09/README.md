@@ -46,9 +46,9 @@ client.query(thisQuery, (err, res) => {
 This way, the server will run continuously (rather than shutting down after a period non-use, which is a cost-saving measure).
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/cloud9_preference.png" width="900px">
 
-#### 3. pm2 - In order to run the file continuously, I created a process manager with PM2.  
+#### 3. In order to run the file continuously, I created a process manager with PM2.  
 
-Reference: https://pm2.keymetrics.io/ 
+Reference: https://pm2.keymetrics.io/ <br>
 In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ contains my own information. 
 
 ```
@@ -87,3 +87,18 @@ module.exports = {
 };
 
 ```
+
+#### 4. Initial testing of the code without PM2
+<img src="">
+
+#### 5. Start the eco system
+```
+pm2 start ecosystem.config.js
+```
+
+#### 6. Check the list of tasks
+```
+pm2 ls
+```
+
+pm2 list
