@@ -6,8 +6,9 @@ This week, the goal is to create a new table for the sensor data and begin writi
 I decided to use PostgreSQL for this project.
 
 ---
+### Prep
 
-#### Step 1 - Set up a new table in the Relational Database to receive values from sensors
+#### 1. Set up a new table in the Relational Database to receive values from sensors
 
 ```javascript
 const {Client} = require('pg'); // postgreSQL
@@ -35,3 +36,6 @@ client.query(thisQuery, (err, res) => {
     client.end();
 });
 ```
+
+#### 2. In the Cloud9 environment editor, change the settings in "Preferences." In the preferences under "EC2 Instance," choose "Never" from the "Stop my environment:" dropdown. 
+This way, the server will run continuously (rather than shutting down after a period non-use, which is a cost-saving measure/
