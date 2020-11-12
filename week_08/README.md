@@ -41,12 +41,13 @@ My humidity/temperature sensor (DHT11) has three pins; I don’t need to connect
 ```
     #define DHTTYPE DHT11   // DHT 11
 ```
-4. I set up two Particle variables (reference: https://docs.particle.io/reference/device-os/firmware/photon/#particle-variable-) so that the sensor values from the Photon Board can be read in the Cloud environment. In my understanding, Serial.print() values were not directly read in the console. 
+4. I set up two Particle variables (reference: https://docs.particle.io/reference/device-os/firmware/photon/#particle-variable-) so that the sensor values from the Photon Board can be read in the Cloud environment. In my understanding, Serial.print() values were not directly read in the particle console. 
+
 ```
     Particle.variable("tVal", tVal);
     Particle.variable("hVal", hVal);
 ```
-The Particle variables in my case had to be set up as double instead of float. 
+The Particle variables had to be set up as double instead of float. 
 
 ```
     double tVal = 0;
@@ -55,10 +56,12 @@ The Particle variables in my case had to be set up as double instead of float.
 5. These two sensor values can be read on Cloud in the following links:
     1. Temperature (Celcius): https://api.particle.io/v1/devices/3d001f000f47353136383631/tVal?access_token=478b7ecf00ca4e99b22914e4beae9c776b8f402c 
     2. Humidity:  https://api.particle.io/v1/devices/3d001f000f47353136383631/hVal?access_token=478b7ecf00ca4e99b22914e4beae9c776b8f402c 
+
 6. Screenshot from sample readings are as follows
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/particle_variable_tVal.png" width="500px">
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/particle_variable_hVal.png" width="500px">
-7. My readings are published in console in a single JSON format.
+
+7. My combined readings are published in console in a single JSON format.
 
 ```
 Particle.publish("SensorReadings", String::format("{\"Humidity(\%)\": %4.2f, \"Temperature(°C)\": %4.2f, \"Temperature(°F)\": %4.2f,  \"Heat Index(°C)\": %4.2f}", hVal, tVal, f, hic));
