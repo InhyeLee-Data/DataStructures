@@ -58,7 +58,11 @@ The Particle variables in my case had to be set up as double instead of float.
 6. Screenshot from sample readings are as follows
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/particle_variable_tVal.png" width="500px">
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/particle_variable_hVal.png" width="500px">
-7. Later, I will re-construct these two readings in a single JSON format.
+7. My readings are published in console in a single JSON format.
+```
+Particle.publish("SensorReadings", String::format("{\"Humidity(\%)\": %4.2f, \"Temperature(°C)\": %4.2f, \"Temperature(°F)\": %4.2f,  \"Heat Index(°C)\": %4.2f}", hVal, tVal, f, hic));
+```
+
 
 8. My initial Sketch - Life in Corona Era. What am I missing? Personal journal of the missed warmth.
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/initialSketch.jpg" width="500px">
