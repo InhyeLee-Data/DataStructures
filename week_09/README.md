@@ -48,7 +48,7 @@ This way, the server will run continuously (rather than shutting down after a pe
 #### 3. In order to run the file continuously, I created a process manager with PM2.  
 
 Reference: https://pm2.keymetrics.io/ <br>
-In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ contains my own information. 
+In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ below contains my own information. 
 
 ```
 ecosystem.config.js
@@ -88,7 +88,7 @@ module.exports = {
 ```
 
 #### 4. Initial testing of the code without PM2
-<img src="">
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/one%20Value.png">
 
 #### 5. Start the eco system
 ```
@@ -150,4 +150,7 @@ client.query(thirdQuery, (err, res) => {
 });
 ```
 #### 8. Result 
-<img src="" width="800px">
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/pm2_ls" width="800px">
+
+#### 9. Future Step
+I am planning to use another API that receives weather(temperature) information from my dream locations, to visualiza the warmth I am missing in this era of Corona virus when travelling to overseas is tough.
