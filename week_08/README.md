@@ -53,20 +53,16 @@ The Particle variables had to be set up as double instead of float.
     double tVal = 0;
     double hVal = 0;
 ```
-5. These two sensor values can be read on Cloud in the following links:
-    1. Temperature (Celcius): https://api.particle.io/v1/devices/3d001f000f47353136383631/tVal?access_token=478b7ecf00ca4e99b22914e4beae9c776b8f402c 
-    2. Humidity:  https://api.particle.io/v1/devices/3d001f000f47353136383631/hVal?access_token=478b7ecf00ca4e99b22914e4beae9c776b8f402c 
-
-6. Screenshot from sample readings are as follows
+5. These two sensor values can be read on Cloud. Screenshot from sample readings are as follows
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/particle_variable_tVal.png" width="500px">
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/particle_variable_hVal.png" width="500px">
 
-7. My combined readings are published in console in a single JSON format.
+6. My combined readings are published in console in a single JSON format.
 
 ```
 Particle.publish("SensorReadings", String::format("{\"Humidity(\%)\": %4.2f, \"Temperature(°C)\": %4.2f, \"Temperature(°F)\": %4.2f,  \"Heat Index(°C)\": %4.2f}", hVal, tVal, f, hic));
 ```
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/sensorReadings_console.png" width="800px">
 
-8. My initial Sketch - Life in Corona Era. What am I missing? Personal journal of the missed warmth.
+7. My initial Sketch - Life in Corona Era. What am I missing? Personal journal of the missed warmth.
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_08/img/initialSketch.jpg" width="500px">
