@@ -37,6 +37,6 @@ client.query(thisQuery, (err, res) => {
 });
 ```
 
-#### 2. In the Cloud9 environment editor, change the settings in "Preferences." In the preferences under "EC2 Instance," choose "Never" from the "Stop my environment:" dropdown. 
-This way, the server will run continuously (rather than shutting down after a period non-use, which is a cost-saving measure/
+#### 2. In the preferences under Cloud 9's "EC2 Instance" that I am using, choose "Never" from the "Stop my environment:" dropdown. 
+This way, the server will run continuously (rather than shutting down after a period non-use, which is a cost-saving measure).
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/cloud9_preference.png" width="900px">
