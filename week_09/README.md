@@ -10,6 +10,8 @@ I decided to use PostgreSQL for this project.
 
 #### 1. Set up a new table in the Relational Database to receive values from sensors
 
+w9-worker.js
+
 ```javascript
 const {Client} = require('pg'); // postgreSQL
 const dotenv = require("dotenv").config({ path: __dirname + `/../.env` }); // dotenv
@@ -38,5 +40,46 @@ client.query(thisQuery, (err, res) => {
 ```
 
 #### 2. In the preferences under Cloud 9's "EC2 Instance" that I am using, choose "Never" from the "Stop my environment:" dropdown. 
+
 This way, the server will run continuously (rather than shutting down after a period non-use, which is a cost-saving measure).
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/cloud9_preference.png" width="900px">
+
+#### 3. pm2 - In order to run the file continuously, I created a process manager with PM2.  
+
+ecosystem.config.js
+
+Reference: https://pm2.keymetrics.io/ 
+In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ contains my own information. 
+
+```javascript
+module.exports = {
+  apps : [{
+    script: 'w9-worker.js',
+    watch: '.'
+  }, {
+    script: './service-worker/',
+    watch: ['./service-worker'],
+    env: {
+      "PHOTON_ID": "______________",
+      "PHOTON_TOKEN": "______________",
+      "AWSRDS_PW": "______________",
+      "AWSRDS_EP": "______________"
+    }
+    
+  }],
+
+  deploy : {
+    production : {
+      user : 'SSH_USERNAME',
+      host : 'SSH_HOSTMACHINE',
+      ref  : 'origin/master',
+      repo : 'GIT_REPOSITORY',
+      path : 'DESTINATION_PATH',
+      'pre-deploy-local': '',
+      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
+      'pre-setup': ''
+    }
+  }
+};
+
+```
