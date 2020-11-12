@@ -46,7 +46,9 @@ This way, the server will run continuously (rather than shutting down after a pe
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/cloud9_preference.png" width="900px">
 
 #### 3. In order to run the file continuously, I created a process manager with PM2.  
-
+```
+pm2 start ecosystem.config.js
+```
 Reference: https://pm2.keymetrics.io/ <br>
 In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ below contains my own information. 
 
@@ -90,17 +92,12 @@ module.exports = {
 #### 4. Initial testing of the code without PM2
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/one%20Value.png" width="800px">
 
-#### 5. Start the eco system
-```
-pm2 start ecosystem.config.js
-```
-
-#### 6. Check the list of tasks
+#### 5. Check the list of tasks
 ```
 pm2 ls
 ```
 
-#### 7. Checking if I'm getting the values into the table
+#### 6. Checking if I'm getting the values into the table
 ```
 w9-check.js
 ```
@@ -149,8 +146,8 @@ client.query(thirdQuery, (err, res) => {
     client.end();
 });
 ```
-#### 8. Result 
+#### 7. Result of data entering into the table
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/pm2_ls.png" width="800px">
 
-#### 9. Future Step
+#### 8. Future Step
 I am planning to use another API that receives weather(temperature) information from my dream locations, to visualiza the warmth I am missing in this era of Corona virus when travelling to overseas is tough.
