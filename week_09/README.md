@@ -45,10 +45,19 @@ client.query(thisQuery, (err, res) => {
 This way, the server will run continuously (rather than shutting down after a period non-use, which is a cost-saving measure).
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/cloud9_preference.png" width="900px">
 
-#### 3. In order to run the file continuously, I created a process manager with PM2.  
+#### 3. In order to run the file continuously, I created a process manager with PM2 in the terminal.   
 ```
-pm2 start ecosystem.config.js
+npm install pm2 -g
 ```
+
+```
+pm2 init
+```
+
+#### 4. Initial testing of the w9-worker file without PM2
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/one%20Value.png" width="800px">
+
+#### 5. PM2 - What it watches
 Reference: https://pm2.keymetrics.io/ <br>
 In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ below contains my own information. 
 
@@ -89,13 +98,22 @@ module.exports = {
 
 ```
 
-#### 4. Initial testing of the code without PM2
-<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/one%20Value.png" width="800px">
+The task can begin with the following command - 
+```
+pm2 start ecosystem.config.js
+```
 
-#### 5. Check the list of tasks
+The list of tasks that my manager watches can be viewed with the following command - 
+
 ```
 pm2 ls
 ```
+
+I can stop a certain task by addressing its ID number (In my case I only have 1 task, and the index is 0)
+```
+pm2 stop 0
+```
+
 
 #### 6. Checking if I'm getting the values into the table
 ```
