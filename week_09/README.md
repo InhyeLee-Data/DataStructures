@@ -10,7 +10,9 @@ I decided to use PostgreSQL for this project.
 
 #### 1. Set up a new table in the Relational Database to receive values from sensors
 
+```
 w9-worker.js
+```
 
 ```javascript
 const {Client} = require('pg'); // postgreSQL
@@ -46,10 +48,12 @@ This way, the server will run continuously (rather than shutting down after a pe
 
 #### 3. pm2 - In order to run the file continuously, I created a process manager with PM2.  
 
-ecosystem.config.js
-
 Reference: https://pm2.keymetrics.io/ 
 In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ contains my own information. 
+
+```
+ecosystem.config.js
+```
 
 ```javascript
 module.exports = {
