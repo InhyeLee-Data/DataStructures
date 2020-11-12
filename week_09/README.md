@@ -10,7 +10,7 @@ I decided to use PostgreSQL for this project.
 #### 1. Set up a new table in the Relational Database to receive values from sensors
 
 ```
-w9-worker.js
+setup.js
 ```
 
 ```javascript
@@ -45,7 +45,14 @@ client.query(thisQuery, (err, res) => {
 This way, the server will run continuously (rather than shutting down after a period non-use, which is a cost-saving measure).
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/cloud9_preference.png" width="900px">
 
-#### 3. In order to run the file continuously, I created a process manager with PM2 in the terminal.   
+#### 3. Script to Insert the sensor values to the database.
+```
+w9-worker.js
+```
+I will make a request to the Particle API URL. This script will parse the result of the API request and insert the appropriate data into the database. It will run continuously at a rate of at least once every five minutes. The script is as follows. 
+
+
+#### 4. In order to run the file continuously, I created a process manager with PM2 in the terminal. This above code will run with PM2 (Project Manager) 
 ```
 npm install pm2 -g
 ```
@@ -54,16 +61,17 @@ npm install pm2 -g
 pm2 init
 ```
 
-#### 4. Initial testing of the w9-worker file without PM2
+#### 5. Before I run the code with PM2, I do the initial testing of the w9-worker script. It works to enter each sensor reading.
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/one%20Value.png" width="800px">
 
-#### 5. PM2 - What it watches
+#### 6. Now I set up PM2 properly.What does it watch?
 Reference: https://pm2.keymetrics.io/ <br>
 In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ below contains my own information. 
 
 ```
-ecosystem.config.js
+ecosystem.config.js 
 ```
+Not included in this github directory. But the script goes as follows.
 
 ```javascript
 module.exports = {
@@ -165,7 +173,7 @@ client.query(thirdQuery, (err, res) => {
     client.end();
 });
 ```
-#### 7. Result of data entering into the table
+#### 7. Yes, the Result is shown as below.
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/w9-check.png" width="500px">
 
 #### 8. Future Step
