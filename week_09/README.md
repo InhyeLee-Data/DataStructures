@@ -53,6 +53,7 @@ I will make a request to the Particle API URL. This script will parse the result
 
 
 #### 4. In order to run the file continuously, I created a process manager with PM2 in the terminal. This above code will run with PM2 (Project Manager) 
+Reference: https://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/
 ```
 npm install pm2 -g
 ```
@@ -64,8 +65,7 @@ pm2 init
 #### 5. Before I run the code with PM2, I do the initial testing of the w9-worker script. It works to enter each sensor reading.
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/one%20Value.png" width="800px">
 
-#### 6. Now I set up PM2 properly.What does it watch?
-Reference: https://pm2.keymetrics.io/ <br>
+#### 6. Now I set up PM2 properly. Let's check what it manages.
 In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ below contains my own information. 
 
 `
