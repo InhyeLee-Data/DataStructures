@@ -9,9 +9,9 @@ I decided to use PostgreSQL for this project.
 
 #### 1. Set up a new table in the Relational Database to receive values from sensors
 
-```
+`
 setup.js
-```
+`
 
 ```javascript
 const {Client} = require('pg'); // postgreSQL
@@ -46,9 +46,9 @@ This way, the server will run continuously (rather than shutting down after a pe
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/cloud9_preference.png" width="900px">
 
 #### 3. Script to Insert the sensor values to the database.
-```
+`
 w9-worker.js
-```
+`
 I will make a request to the Particle API URL. This script will parse the result of the API request and insert the appropriate data into the database. It will run continuously at a rate of at least once every five minutes. The script is as follows. 
 
 
@@ -68,9 +68,9 @@ pm2 init
 Reference: https://pm2.keymetrics.io/ <br>
 In my ecosystem.config.js which was created by PM2, I replaced the "script" with 'w9-worker.js'; this is the script that will run continuously whether I am connected to aws or not. and I added env: {} object which contains credentials for Photon and AWSRDS, _____________ below contains my own information. 
 
-```
+`
 ecosystem.config.js 
-```
+`
 Not included in this github directory. But the script goes as follows.
 
 ```javascript
@@ -125,9 +125,9 @@ pm2 stop 0
 
 
 #### 6. Checking if I'm getting the values into the table
-```
+`
 w9-check.js
-```
+`
 
 ```javascript
 const { Client } = require('pg');
