@@ -5,7 +5,7 @@ Reference: https://github.com/samizdatco/ds-2020/tree/master/weekly_assignment_0
 This week, the goal is to create a new table for the sensor data and begin writing values to it at a frequency of at least once every five minutes.
 I decided to use PostgreSQL for this project.
 
-Additionally, while currently being located in Seoul, I am trying to get a temperature input from my dream Winter getaway location (Phuket, Thailand) and my outside temperature in Seoul; I'd like to compare how much of warmth I am missinig or gaining by staying indoors at home in Seoul. 
+Currently being located in Seoul, I am trying to get a temperature input from my dream Winter getaway location (Phuket, Thailand) and my outside temperature in Seoul; I'd like to compare how much of warmth I am missinig or gaining by staying indoors at home in Seoul.
 
 ---
 
