@@ -178,3 +178,5 @@ client.query(thirdQuery, (err, res) => {
 
 #### 8. Future Step
 I am planning to use another API that receives weather(temperature) information from my dream locations, to visualiza the warmth I am missing in this era of Corona virus when travelling to overseas is tough.
+
+I am looking into OpenWeatherMap.org's API: https://openweathermap.org/current 
