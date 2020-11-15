@@ -9,10 +9,11 @@ Currently being located in Seoul, I am trying to get a temperature input from my
 
 ---
 
-#### 1. Set up a new table in the Relational Database to receive values from sensors and from weather API.
-(I am looking into OpenWeatherMap.org's API. How to use an API call: https://openweathermap.org/current)
-I created each table individually. Otherwise, there was a problem registering each table.  
-One way to solve it might be using async function, which I did not use.
+#### 1. Set up a new table in the Relational Database to receive values from sensors and from the weather API.
+I am looking into OpenWeatherMap.org's API to get the general temperature from Phuket and Seoul. 
+How to use an API call: https://openweathermap.org/current)
+I created each table individually (sensorData, phuketData, seoulData). Otherwise, there was a problem creating all three tables simultaneously.  
+One way to solve it might be using async function, which I did not use this time.
 
 `
 setup.js
@@ -69,6 +70,56 @@ This way, the server will run continuously (rather than shutting down after a pe
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/cloud9_preference.png" width="900px">
 
 #### 3. Script to Insert the sensor values and outside temperature values of Phuket and Seoul to the database.
+I access the local temperature of a certain location by accessing main.temp of the JSON, which can be retreived by an API Call of api.openweathermap.org/data/2.5/find?lat={lat}&lon={lon}&units=metric&appid={API key}
+
+Following is the example of an API response.
+``` javascript 
+{
+  "coord": {
+    "lon": -122.08,
+    "lat": 37.39
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 282.55,
+    "feels_like": 281.86,
+    "temp_min": 280.37,
+    "temp_max": 284.26,
+    "pressure": 1023,
+    "humidity": 100
+  },
+  "visibility": 16093,
+  "wind": {
+    "speed": 1.5,
+    "deg": 350
+  },
+  "clouds": {
+    "all": 1
+  },
+  "dt": 1560350645,
+  "sys": {
+    "type": 1,
+    "id": 5122,
+    "message": 0.0139,
+    "country": "US",
+    "sunrise": 1560343627,
+    "sunset": 1560396563
+  },
+  "timezone": -25200,
+  "id": 420006353,
+  "name": "Mountain View",
+  "cod": 200
+  }                         
+```
+
 `
 w9-worker.js
 `
@@ -181,7 +232,7 @@ setInterval(getPhuketTemperature, 300000);// every 5 minute
 setInterval(getSeoulTemperature, 300000);
 ```
 
-I will make a request to the Particle API URL. This script will parse the result of the API request and insert the appropriate data into the database. It will run continuously at a rate of at least once every five minutes. The script is as follows. 
+I will make a request to the Particle API URL and the Weathter API URL. This script will parse the result of the API request and insert the appropriate data into the database. It will run continuously at a rate of at least once every five minutes. The script is as follows. 
 
 
 #### 4. In order to run the file continuously, I created a process manager with PM2 in the terminal. This above code will run with PM2 (Project Manager) 
@@ -357,13 +408,16 @@ client.query(seoul_query3, (err, res) => {
     client.end(); // Only end at the last query
 });
 ```
-#### 7. Yes, the Result is shown as below.
-Data from the installed Sensor
+#### 7.The Result is shown as below.
+Data from the installed Sensor in my temporary residence in Seoul 
 
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/w9-check.png" width="500px">
 
-Data from OpenWeatherMap API
+Two Datasets from OpenWeatherMap API - Phuket, Seoul 
 
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/phuket_seoul.png" width="500px">
 
-
+#### 8. Now, some remaining questions.
+1. How am I going to show the "timestamp". Should I convert it to KST, to make it more relevant to my local time 
+2. How can I show the data from three tables togehter in one graph? -> Interface Design
+3. I am currently entering data into the table every 5 min. Is that necessary? Should I provide a sort of day/night average of temperature? 
