@@ -14,11 +14,29 @@ let db_credentials = {
 const client = new Client(db_credentials);
 client.connect();
 
-// Sample SQL statement to create a table: 
-let thisQuery = "CREATE TABLE sensorData ( sensorValue double precision, sensorTime timestamp DEFAULT current_timestamp );";
-// let thisQuery = "DROP TABLE sensorData;" // In case dropping the table
+//****** I created each table individually. Otherwise, there was a problem registering each table. 
+// One way to solve it might be using async function, which I did not use.
 
-client.query(thisQuery, (err, res) => {
+// Sample SQL statement to create a table: 
+// let thisQuery = "CREATE TABLE sensorData ( sensorValue double precision, sensorTime timestamp DEFAULT current_timestamp );";
+// let phuketQuery = "CREATE TABLE phuketData ( phuketTemp double precision, phuketTime timestamp DEFAULT current_timestamp );";
+let seoulQuery = "CREATE TABLE seoulData ( seoulTemp double precision, seoulTime timestamp DEFAULT current_timestamp );";
+// let thisQuery = "DROP TABLE sensorData;" // In case dropping the table
+// let phuketQuery = "DROP TABLE phuketData;" // In case dropping the table
+// let seoulQuery = "DROP TABLE seoulData;" // In case dropping the table
+
+
+// client.query(thisQuery, (err, res) => {
+//     console.log(err, res);
+//     client.end();
+// });
+
+// client.query(phuketQuery, (err, res) => {
+//     console.log(err, res);
+//     client.end();
+// });
+
+client.query(seoulQuery, (err, res) => {
     console.log(err, res);
     client.end();
 });
