@@ -359,8 +359,11 @@ client.query(seoul_query3, (err, res) => {
 ```
 #### 7. Yes, the Result is shown as below.
 Before the Weather API data
-<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/w9-check.png" width="500px">
+
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/w9-check.png" width="700px">
 
 After I received data from Weather API
+
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/sensor_phuket_seoul.png" width="700px">
 
 
