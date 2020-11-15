@@ -10,7 +10,7 @@ Currently being located in Seoul, I am trying to get a temperature input from my
 ---
 
 #### 1. Set up a new table in the Relational Database to receive values from sensors and from weather API.
-(I am looking into OpenWeatherMap.org's API: https://openweathermap.org/current)
+(I am looking into OpenWeatherMap.org's API. How to use an API call: https://openweathermap.org/current)
 I created each table individually. Otherwise, there was a problem registering each table.  
 One way to solve it might be using async function, which I did not use.
 
@@ -358,12 +358,12 @@ client.query(seoul_query3, (err, res) => {
 });
 ```
 #### 7. Yes, the Result is shown as below.
-Before the Weather API data
+Data from the installed Sensor
 
-<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/w9-check.png" width="700px">
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/w9-check.png" width="500px">
 
-After I received data from Weather API
+Data from OpenWeatherMap API
 
-<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/sensor_phuket_seoul.png" width="700px">
+<img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_09/img/phuket_seoul.png" width="500px">
 
 
