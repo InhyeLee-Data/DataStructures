@@ -45,7 +45,6 @@ client.query(sensor_query3, (err, res) => {
     else {
     console.table(res.rows);
     }
-    
 });
 
 client.query(phuket_query1, (err, res) => {
@@ -53,7 +52,6 @@ client.query(phuket_query1, (err, res) => {
     else {
     console.table(res.rows);
     }
-   
 });
 
 client.query(phuket_query2, (err, res) => {
