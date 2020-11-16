@@ -58,8 +58,7 @@ client.query(phuket_query2, (err, res) => {
     if (err) {throw err}
     else {
     console.table(res.rows);
-    }
-    
+    }    
 });
 
 client.query(phuket_query3, (err, res) => {
