@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<meta charset = "utf-8">
+<!-- Adapted from: http://bl.ocks.org/Caged/6476579 -->
+
+<style>
+body {font-family: 'Open Sans', sans-serif; }
+
+.location {
+    font-family: 'Open Sans', sans-serif; 
+}
+.row {
+    display: flex;
+ 
+}
+</style>
+  <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<body>
+<div class = "container">
+        
+ <div class = "sticky">
+            <h3>DEC 2020 COVID TIME</h3>
+            <h5>How much warmth am I missing or gaining by Staying Indoors at Home in Seoul?</h5>
+ </div>
+ 
+ <div class = "row">          
+  <svg class = "tempgraph"></svg>
+ </div>
+</body>
+
+<script src = "https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src = "https://d3js.org/d3.v5.js"></script>
+<script src = "https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+<script> //*********** d3 drawing with sensor Val 
+// ************ HERE IS THE D3 portion     
+    
+// graph with and height
+let rwidth = 1000, rheight = 800;
+
+let margin = {top:50,bottom:50,left:40,right:100};
+
+let width = rwidth-margin.left-margin.right;
+let height = rheight-margin.top-margin.bottom;
+
+// Colors: 
+let colorCode = ['#FF38E0','#5738FF','#FF9438'];
+
+// Colors, Region 
+let region = ['Phuket','At Home','Outside in Seoul']
+let cleanedData = [];
+
+let svg = d3.select('.tempgraph')
+            .attr('width',rwidth)
+            .attr('height',rheight)
+
+let cityColor;
+let xscale,yscale;
+
+// How many days 
+let ticknumber = 15;
+
+async function loadD3(){
+    let entireData = await Promise.all
+    ([d3.json('/data/phuket.json'), 
+     d3.json('/data/sensor.json'), 
+     d3.json('/data/seoul.json')])
+    
+    console.log("entire data :", entireData);
+    
+    // Temperature data into One Array
+    region.forEach((d,i) =>{
+        
+        let tempvaluearray = entireData[i];
+        let templength = 15;
+        let targetArray = [];
+
+        for(let m = 0; m < templength; m++){
+            targetArray.push(
+                {days:tempvaluearray[m].day,
+                temps:tempvaluearray[m].temp}
+            )
+        }
+        cleanedData.push({
+            name:d,
+            values:targetArray
+        })
+    })
+
+    console.log(cleanedData);
+    //   =>Into one array 
+
+    // day extent 
+    let xextent = d3.extent([1,15])
+
+    // variation of temperature
+    let yextent = [-8,30]
+    
+    // Diff color per place
+    cityColor = d3.scaleOrdinal().domain(cleanedData).range(colorCode);
+
+    xscale = d3.scaleLinear().domain(xextent).range([margin.left,width])
+    yscale = d3.scaleLinear().domain(yextent).range([height,margin.top])
+
+    let xaxis = svg.append('g').attr('class','xaxis').attr('transform',`translate(0,${height})`)
+    .call(d3.axisBottom(xscale).ticks(ticknumber))
+
+    let yaxis = svg.append('g').attr('class','yaxis').attr('transform',`translate(${margin.left},0)`)
+    .call(d3.axisLeft(yscale))
+
+    // D3 - Line Graph: 
+    // X- days, Y - temperature
+    let line  =  d3.line()
+    .x((d) => {
+        return xscale(d.days)
+    })
+    .y((d) => {
+        return yscale(d.temps)
+    })
+    console.log(cleanedData);
+
+    svg.selectAll('myGraph')
+       .data(cleanedData)
+       .join('path')
+       .attr('d',d  =>line(d.values))
+       .attr('stroke',d  =>cityColor(d.name))
+       .style('stroke-width',1)
+       .style('fill','none')
+
+console.log(cleanedData[0].values);
+
+for (let i = 0; i < 3 ; i++) {
+
+       svg.append('path')
+       .datum(cleanedData[i].values)
+       .attr('d',d3.area()
+                   .x(d  => xscale(d.days))
+                   .y0(d  => yscale(-8))
+                   .y1(d  => yscale(d.temps))
+       )
+       .style('fill',cityColor(region[i]))
+       .style('opacity',0.05)
+}
+
+//Labels
+svg.selectAll('labels')
+    .data(cleanedData)
+    .join('text')
+    .attr("class", "location")
+    .datum(function(d) { return {name: d.name, value: d.values[d.values.length-1]} } )
+    .attr("transform", function(d,i) {return `translate(${xscale(d.value.days)},${yscale(d.value.temps)})`})
+    .attr("x", 5)
+    .attr('y',(d,i)  => {return 0})
+    .text(function(d) { return d.name; })
+    .style("fill", function(d){ return cityColor(d.name)})
+
+}
+
+  svg
+      .append("text")
+      .attr("x", 30)
+      .attr("y", 30)
+      .attr("dy", ".30em")
+      .style("text-anchor", "end")
+      .text("°C");
+
+  svg
+      .append("text")
+      .attr("x", rwidth - margin.right - margin.left)
+      .attr("y", rheight - margin.bottom)
+      .attr("dy", ".30em")
+      .style("text-anchor", "end")
+      .text("Day of Month");
+
+loadD3(); // CALL
+</script>
+

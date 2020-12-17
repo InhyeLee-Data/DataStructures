@@ -1,0 +1,146 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Plates of the Day</title>
+  <meta name="description" content="Plates of the Day">
+  <meta name="author" content="Inhye Lee">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+            
+       .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background: #FFF;
+          display: block;
+          z-index: 10000;
+          padding:0;
+          margin:0;
+        }
+        
+        #fooddiary {
+            margin-top: 100px;
+        }
+
+        .row {
+            display: flex;
+            margin-left: 20px;
+         }
+          
+        .col {
+            flex: 1;
+        }
+    
+        .rounded {
+          border-radius: 50px;
+          border: 1px solid #000000;
+          padding: 20px;
+          /*margin: 10px;*/
+        }
+    
+        .eachDay {
+         background: #ccc;
+         display: block;
+         border-radius: 50px;
+         padding: 20px;
+        }
+        
+        h5 {
+            font-size: 12px;
+            
+        }
+        ul > li {
+            font-size: 1rem;
+            margin: 10px;
+            margin-top:5px;
+            padding: 10px;
+            padding-top:5px;
+            text-align: center;
+        }
+        li:first-child {
+              margin-top:0;
+            }
+    
+        select {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+<div class= "container">
+        
+        <div class ="sticky">
+            <h3>Plates of The Day From Nov 18 to Dec 11 2020</h3>
+            <select name="feeling">
+                <option value="2">Bad Day</option>
+                <option value="3">So So Day</option>
+                <option value="4">Okay Day</option>
+                <option selected="selected" value="5">Good Day</option>
+            </select>
+        </div>
+    
+        <div id="fooddiary">
+        </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+$(function(){
+        $('select').change(function() { // If there is a change on the drop down menu 
+            displayDiary(); 
+             console.log("Drop down changed to");
+           //  console.log (`my Value is $('select[name="feeling"]').val()`);
+        });
+});
+
+// const feelings = ['Terrible', 'Bad', 'So So', 'Okay', 'Good'] // it will come in as number then trasferred to string
+
+$(document).ready(function() {
+          $(".list-group-item").css("visibility", "hidden");
+});
+        
+let BGColorArr = ["#999", "#5D576B", "#F4F1BB", "#78FECF"];
+
+$('.eachDay').css("background-color", BGColorArr[3]); 
+
+function displayDiary(){
+    //start
+    var params = {feeling: $('select[name="feeling"]').val()};
+    let myFeeling = $('select[name="feeling"]').val();
+    console.log("myFeeling", myFeeling);
+    
+                    
+    $.get( '/diary', params, function(data) { //request Data from api into dom element
+        $('#fooddiary').html(data);
+        console.log("data", data);
+        setTimeout(seeEmptyPlates(), 0);
+    });
+
+}
+
+function seeEmptyPlates(){
+    // $('.eachDay').css("background-color", BGColorArr[Number(myFeeling)-2]);
+        $(document).ready(function(){
+          $(".list-group-item:contains(Skipped)").css("visibility", "hidden");
+        });
+}
+
+displayDiary();
+
+</script>
+</body>
+</html>
+
+

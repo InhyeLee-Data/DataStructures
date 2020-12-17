@@ -1,0 +1,50 @@
+{{#fooddiary}}
+  <div class="row">
+        <h4 class="date">{{date}}</h3> 
+  </div>
+  <div class="row eachDay">
+          <div class="col-sm-3">
+            <h5 class="card-title">Breakfast</h5>
+              <ul class="list-group card-text rounded">
+              {{#each breakfast as |item|}}
+                <li class="list-group-item rounded">
+                    {{item}}
+                </li>
+              {{/each}}
+              </ul>
+          </div>
+          
+          <div class="col-sm-3">
+            <h5 class="card-title">Lunch</h5>
+              <ul class="list-group card-text rounded">
+              {{#each lunch as |item|}}
+                <li class="list-group-item rounded">
+                    {{item}}
+                </li>
+              {{/each}}
+              </ul>
+          </div>
+          
+          <div class="col-sm-3">
+            <h5 class="card-title">Dinner </h5> 
+              <ul class="list-group card-text rounded">
+              {{#each dinner as |item|}}
+                <li class="list-group-item rounded">
+                  {{item}}
+                </li>
+              {{/each}}
+              </ul>
+          </div>
+          
+          <div class="col-sm-3">
+            <h5 class="card-title">Snack </h5> 
+              <ul class="list-group card-text rounded">
+              {{#each snack as |item|}}
+                <li class="list-group-item rounded">
+                  {{item}}
+                </li>
+              {{/each}}
+              </ul>
+          </div>
+  </div>
+{{/fooddiary}}

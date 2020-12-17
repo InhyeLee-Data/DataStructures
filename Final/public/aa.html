@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>New York City AA Meet Up Finder</title>
+  <meta name="description" content="AA Meetings">
+  <link rel="stylesheet" href="aa.css" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel='stylesheet' type='text/css'> 
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+   <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+</head>
+
+<body>
+  
+  <div class ="row">
+    <div id="intro"><h2>New York City AA Meet Up Finder</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-left">
+                <h4>Day of the Week</h4>
+                <div class="form-group">
+                  <select name="day">
+                    <option value="Mondays">Monday</option>
+                    <option value="Tuesdays">Tuesday</option>
+                    <option value="Wednesdays">Wednesday</option>
+                    <option value="Thursdays">Thursday</option>
+                    <option value="Fridays">Friday</option>
+                    <option value="Saturdays">Saturday</option>
+                    <option value="Sundays">Sunday</option>
+                  </select>
+                </div>
+                
+                <h4>Meeting Type</h4>
+                <div class="form-group">
+                  <select name="type">
+                    <option value=" B = Beginners ">Beginners Meeting</option>
+                    <option value=" BB = Big Book ">Big Book Meeting</option>
+                    <option value=" C = Closed Discussion ">Closed Discussion Meeting</option>
+                    <option value=" S = Step ">Step Meeting</option>
+                    <option value=" O = Open ">Open Meeting</option>
+                    <option value=" OD = Open Discussion " selected="selected">Open Discussion Meeting</option>
+                  </select>
+                </div>
+    </div> <!-- DROP DOWN -->
+    
+    <div class="col-right">
+          <div id="mapid"></div> <!-- LEAFLET MAP WILL BE HERE -->
+    </div> <!-- MAP -->
+  </div>  
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.32/index.min.js"></script>-->
+<script> 
+let preMarkers = []; // Array for previous Markers on the MAP
+
+initialSetup(); // Call the default function to show the map, reflecting the day of the week.
+
+function initialSetup() {
+  // (1) Day of the Week acquired from the Moment Library
+  let today = moment().isoWeekday(); // 1 :  Monday and 7 : Sunday.
+  console.log("today", today)
+  let myDayArr = ["Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays", "Sundays"];
+
+  // (2) Set The Selected State for the day option
+  for (let i = 0; i< 7; i++) {
+    if (today === i+ 1) {
+       $(`select[name="day"] option:eq(${i})`).attr('selected', 'selected')
+    } 
+  }
+  
+  showOnMap(); // Show markers on the MAP
+}
+
+var mymap = L.map('mapid').setView([40.734636,-73.994997], 13); 
+            
+L.tileLayer('https://api.mapbox.com/styles/v1/seatomato/ckin0sq4w1l8w17qp0hegdvqb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoic2VhdG9tYXRvIiwiYSI6ImNrMzh3d2xweDAwMjgzY21yN3Vma2hjcmMifQ.m9fS9AL99frGqwwFDTrRzg', {
+        maxZoom: 20,
+        tiles: 256,
+        }).addTo(mymap);
+                
+mymap.addControl(new L.Control.Fullscreen());
+                
+$(function(){
+        $('select').change(function(){ // If there is a change on the drop down menu 
+            showOnMap(); 
+            console.log("Drop down changed");
+        });
+});
+
+    
+function showOnMap() {
+        var params = { 
+                          day: $('select[name="day"]').val(), 
+                          type: $('select[name="type"]').val()
+                        };
+                        
+        $.get('/aa', params, function(data){ 
+          console.log("data", data); // Receive data values 
+    
+          // Map - Pop UP      
+          for (var i = 0; i < data.length; i++) {
+                let content = `
+                <b>${data[i].location}</b><br>
+                <span>Address: ${data[i].address}</span><br>
+                <span>Time: ${data[i].meetingtime}</span>
+                `;
+                
+                let myMarker = L.marker([data[i].lat, data[i].long]).bindPopup(content).addTo(mymap);
+                preMarkers.push(myMarker);
+          }
+          console.log("previous Markers", preMarkers);
+          
+        });
+        // EMOVE THE MARKER HERE;
+        for (let j = 0; j < preMarkers.length; j++) {
+          mymap.removeLayer(preMarkers[j]);
+          console.log("removing markers here.");
+          }
+          
+        preMarkers = []; // ****** EMPTY THE Marker ARRAY.
+} 
+
+</script>
+  
+</body>
+
+</html>
