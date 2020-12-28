@@ -27,6 +27,7 @@ A link to the Project Description Video: https://www.youtube.com/watch?v=46smDiY
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_06">2.Set up a Partition Key & a Primary Key </a>
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_10">3.Sketch the basic Interface design </a>
   - 4.Final Deployment
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/food_diary_entry.js">(0)A brand-new Data entry for the food diary: A json file was created from my daily food consumption entry in the google spreadsheet </a>
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/app.js">(1)Data query</a>
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/diary.html">(2)Web interface to call query and display</a>
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/diaryTemplate.html">(3)Handlebars for a food diary template</a>
