@@ -14,8 +14,8 @@ A link to the Project Description Video: https://www.youtube.com/watch?v=46smDiY
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_10">7.Sketch the basic Interface</a>
   - 8.Final Deployment 
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/app.js">(1)Data query</a>
-      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/aa.html">(2)A web interface to call query and display</a>
-      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/aaTemplate.html">(3)A simple handlebar in the middle</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/aaTemplate.html">(2)A simple handlebar in the middle</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/aa.html">(3)A web interface to call query and display</a>
 - Screenshot
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/img/AAMeetUpFinder.png" width=800px>
 
@@ -28,8 +28,8 @@ A link to the Project Description Video: https://www.youtube.com/watch?v=46smDiY
   - 4.Final Deployment
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/food_diary_entry.js">(0)A brand-new data entry into the Dynamo DB</a>. A json file was created from my daily food consumption data in the google spreadsheet 
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/app.js">(1)Data query</a>
-      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/diary.html">(2)A web interface to call query and display</a>
-      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/diaryTemplate.html">(3)Handlebars for a food diary template</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/diaryTemplate.html">(2)Handlebars for a food diary template</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/diary.html">(3)A web interface to call query and display</a>
 - Screenshots
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/img/PlatesOfTheDay_1.png" width=800px>
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/img/PlatesOfTheDay_2.png" width=800px>
@@ -42,8 +42,9 @@ A link to the Project Description Video: https://www.youtube.com/watch?v=46smDiY
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_10">3.Sketch the basic Interface</a>
   - 4.Final Deployment
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/app.js">(1)Data query</a>
-      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/temperature.html">(2)A web interface to call query and display</a>
-      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/temperatureTemplate.html">(3)Handlebars for a food diary template</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/tTemplate1.html">(2)A simple Handlebar in the middle</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/getTemperature.js">(3)Call query and download the temperature data as jsons</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/temperature.html">(4)Display data from preloaded jsons</a>
 - Screenshot
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/img/Dec2020_CovidTime.png" width= 920px>
 
