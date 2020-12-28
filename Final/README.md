@@ -17,6 +17,7 @@ A link to the Project Description Video: https://www.youtube.com/watch?v=46smDiY
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/aa.html">(2)Web interface to call query and display</a>
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/aaTemplate.html">(3)A simple handlebar in the middle</a>
 
+- Screenshots
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/img/AAMeetUpFinder.png" width=800px>
 
 #### 2. Plates of the Day From Nov 18 to Dec 11 2020
@@ -25,8 +26,12 @@ A link to the Project Description Video: https://www.youtube.com/watch?v=46smDiY
   - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/week_05/w5.js">1.Dynamo DB Setup</a>
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_06">2.Set up a Partition Key & a Primary Key </a>
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_10">3.Sketch the basic Interface design </a>
-  - Final Deployment
+  - 4.Final Deployment
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/app.js">(1)Data query</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/diary.html">(2)Web interface to call query and display</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/diaryTemplate.html">(3)Handlebars for a food diary template</a>
 
+- Screenshots
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/img/PlatesOfTheDay_1.png" width=800px>
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/img/PlatesOfTheDay_2.png" width=800px>
 
@@ -36,6 +41,12 @@ A link to the Project Description Video: https://www.youtube.com/watch?v=46smDiY
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_08">1.Set Up a Photoboard (IoT microcontroller) with a temperature sensor (DHT11)</a>
   - <a href="">2.Set up a postgresQL table to receive data. Receive local temperature data from Openweathermap API. Create a process manager with PM2 to run the script continuously. </a>
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_10">3.Sketch the basic Interface design </a>
-  - Final Deployment
+  - 4.Final Deployment
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/app.js">(1)Data query</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/public/temperature.html">(2)Web interface to call query and display</a>
+      - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/temperatureTemplate.html">(3)Handlebars for a food diary template</a>
+
+  
+- Screenshots
 <img src="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/img/Dec2020_CovidTime.png" width= 920px>
 
