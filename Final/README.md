@@ -5,12 +5,12 @@ A link to the Project Description Video: https://www.youtube.com/watch?v=46smDiY
 #### 1. New York City AA Meet Up Finder
 - Environment: Amazon AWS Cloud9, PostgreSQL, Node/Express, Leaflet, Handlebars, HTML/javascript
 - Process
-  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_01">1</a>
-  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_02">2</a>
-  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_03">3</a>
-  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_04">4</a>
+  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_01">1.Request/save 10 html pages into the aws cloud environment. </a>
+  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_02">2.Initial data cleaning and parsing for one of the pages. </a>
+  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_03">3.Get the Geolocation of each event location via TAMU geoservice API</a>
+  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_04">4.Create a postgreSQL database in amazon aws and enter the location data</a>
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_06">5.Test Querying</a>
-  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_7">6.Finish Parsing. Connect to TAMU Geoservices API. Insert Data into the RDS.</a> 
+  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_7">6.Finish Parsing all 10 pages. Connect to TAMU Geoservices API. Insert Data into the RDS.</a> 
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_10">7.Sketch the basic Interface design </a>
   - 8.Final Deployment 
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/app.js">(1)Data query</a>
