@@ -38,7 +38,7 @@ A link to the Project Description Video: https://www.youtube.com/watch?v=46smDiY
 - Environment/Tools: Amazon AWS Cloud9, PostgreSQL, Photon Microcontroller Board (Wifi) with a temperature sensor, Open Weather API, Node/Express, D3, Handlebars, HTML/javascript
 - Process
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_08">1.Set Up a Photonboard (IoT microcontroller) with a temperature sensor (DHT11)</a>
-  - <a href="">2.Set up a postgreSQL table to receive data. Receive local temperature data from Openweathermap API. Create a process manager with PM2 to run the script continuously. </a>
+  - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_09">2.Set up a postgreSQL table to receive data. Receive local temperature data from Openweathermap API. Create a process manager with PM2 to run the script continuously. </a>
   - <a href="https://github.com/InhyeLee-Data/DataStructures/tree/master/week_10">3.Sketch the basic Interface. </a>
   - 4.Final Deployment
       - <a href="https://github.com/InhyeLee-Data/DataStructures/blob/master/Final/app.js">(1)Data query. </a>
